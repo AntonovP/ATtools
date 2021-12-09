@@ -1,0 +1,389 @@
+{
+  "id": "8c088212-d444-42c0-a730-46974912ae80",
+  "version": "2.0",
+  "name": "Antonov tests Northwind",
+  "url": "http://localhost:5000/",
+  "tests": [{
+    "id": "be00b758-9749-4ec1-b048-9926d49f95c2",
+    "name": "Login",
+    "commands": [{
+      "id": "ff54e5f0-ecaf-4e8d-9b74-f9011dccacbf",
+      "comment": "Открытие страницы авторизации",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2b5e4cd-92d5-4832-b533-b901416c7233",
+      "comment": "Нажатие на поле \"Имя\"",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "268cd300-788b-4826-b887-61e7b3b0b728",
+      "comment": "Ввод имени",
+      "command": "sendKeys",
+      "target": "id=Name",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "0a795078-9110-41da-ad50-b0153ec6b21a",
+      "comment": "Нажатие на поле \"Пароль\"",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7261bb19-e4a1-4815-b4f6-5180c4b88707",
+      "comment": "Ввод пароля",
+      "command": "sendKeys",
+      "target": "id=Password",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "73ca5f0a-4a0c-432c-8aef-48590c6247cf",
+      "comment": "Нажатие на кнопку \"Отправить\"",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7982de11-402b-42c1-8f2f-6d21e518c0fc",
+      "comment": "Проверка осуществления авторизации",
+      "command": "assertElementPresent",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Account/Logout')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f442ba20-452e-4ec7-a16f-ca7962c8cd99",
+    "name": "Add product",
+    "commands": [{
+      "id": "a8835253-d968-43a9-8393-f41f44656482",
+      "comment": "Открытие страницы",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5199943-2e22-411d-8324-765abaf066a3",
+      "comment": "Открытие всех продуктов",
+      "command": "click",
+      "target": "xpath=(//a[contains(text(),'All Products')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(5) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28c13b5d-ebf6-4e11-b014-717edca50b4f",
+      "comment": "Нажатие на кнопку \"Создать новый\"",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11a046a9-dc72-44d5-a0cb-9b5c7eff70f5",
+      "comment": "Нажатие на поле \"Имя продукта\"",
+      "command": "click",
+      "target": "id=ProductName",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd13082e-aa83-4753-8bc4-0569a1734b71",
+      "comment": "Ввод в поле \"Имя продукта\"",
+      "command": "sendKeys",
+      "target": "id=ProductName",
+      "targets": [],
+      "value": "Spinner"
+    }, {
+      "id": "31706abb-44f4-419e-bd66-cd95225212a7",
+      "comment": "Нажатие на список \"Категории\"",
+      "command": "click",
+      "target": "id=CategoryId",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28baeab0-25fd-4e3e-afc6-25613ead7280",
+      "comment": "Выбор категории из списка",
+      "command": "click",
+      "target": "//select[@id='CategoryId']/option[5]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55efcac4-0771-40ba-8109-0a34ef034bad",
+      "comment": "Нажатие на список \"Поставщик\"",
+      "command": "click",
+      "target": "id=SupplierId",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb05cf39-32e1-42f6-bcda-b1f37b0e0654",
+      "comment": "Выбор категории из списка",
+      "command": "click",
+      "target": "//select[@id='SupplierId']/option[7]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0772719d-a24b-499b-a0a0-777434e24f7e",
+      "comment": "Нажатие на поле \"Цена за единицу\"",
+      "command": "click",
+      "target": "id=UnitPrice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e20da050-46fb-415e-8ac1-9454b8493b03",
+      "comment": "Ввод в поле \"Цена за единицу\"",
+      "command": "sendKeys",
+      "target": "id=UnitPrice",
+      "targets": [],
+      "value": "300"
+    }, {
+      "id": "e5092e4f-358e-4e5c-8f3d-02e93169c8a3",
+      "comment": "Нажатие на поле \"Количество в единице\"",
+      "command": "click",
+      "target": "id=QuantityPerUnit",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5a684f2-dd38-4dc9-a9bd-4628685ca37f",
+      "comment": "Ввод в поле \"Количество в единице\"",
+      "command": "sendKeys",
+      "target": "id=QuantityPerUnit",
+      "targets": [],
+      "value": "25"
+    }, {
+      "id": "50796ae5-90ee-4a7c-9e74-d491c0444cd5",
+      "comment": "Нажатие на поле \"Единиц на складе\"",
+      "command": "click",
+      "target": "id=UnitsInStock",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ed8a7a5-ff5a-4b51-abe1-4730b83157f7",
+      "comment": "Ввод в поле \"Единиц на складе\"",
+      "command": "sendKeys",
+      "target": "id=UnitsInStock",
+      "targets": [],
+      "value": "75"
+    }, {
+      "id": "7ca7a6ed-7bb8-4276-8c0e-fb05ed686a96",
+      "comment": "Нажатие на поле \"Единиц под заказ\"",
+      "command": "click",
+      "target": "id=UnitsOnOrder",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "765c03d6-9c26-4a7c-894b-f0674a36d6b7",
+      "comment": "Ввод в поле \"Единиц под заказ\"",
+      "command": "sendKeys",
+      "target": "id=UnitsOnOrder",
+      "targets": [],
+      "value": "10"
+    }, {
+      "id": "89aa6cda-f82a-4562-ba9d-638587b9e5ca",
+      "comment": "Нажатие на поле \"Уровень нового заказа\"",
+      "command": "click",
+      "target": "id=ReorderLevel",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d09582e4-e8f7-43ca-a463-96d202e389ed",
+      "comment": "Ввод в поле \"Уровень нового заказа\"",
+      "command": "sendKeys",
+      "target": "id=ReorderLevel",
+      "targets": [],
+      "value": "15"
+    }, {
+      "id": "6410c216-f969-498a-92c6-e21db2ef44f1",
+      "comment": "Постановка галочки \"Снято с производства\"",
+      "command": "click",
+      "target": "id=Discontinued",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85ee861c-9ee2-41ae-8180-88d3b07708e9",
+      "comment": "Нажатие на кнопку \"Отправить\"",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e48b3eb3-4373-49bf-a6c3-e3afff102a92",
+      "comment": "Проверка закрытия формы создания продукта",
+      "command": "assertElementPresent",
+      "target": "xpath=/html/body/div[2]/a[contains(text(),'Create new')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "eaf968bf-91dd-4604-9f0f-7e8881606845",
+    "name": "Open and check new product",
+    "commands": [{
+      "id": "e1a63b6b-a3c9-48df-a0cd-b63bc572538f",
+      "comment": "Открытие страницы",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f790f54f-c3e4-4b96-8567-932f46eb4366",
+      "comment": "Открытие всех продуктов",
+      "command": "click",
+      "target": "xpath=(//a[contains(text(),'All Products')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(5) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbc9c670-b4d0-4f7c-b4f7-9e04cbec586c",
+      "comment": "Открытие созданного продукта, найденного по имени продукта (т. о. имя проверено)",
+      "command": "click",
+      "target": "//a[contains(text(),'Spinner')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d92d6ff-3bb2-4e0c-92d2-863d93a48295",
+      "comment": "Проверка категории",
+      "command": "assertSelectedLabel",
+      "target": "//select[@id='CategoryId']",
+      "targets": [],
+      "value": "Dairy Products"
+    }, {
+      "id": "9eb2fd6b-768c-4e39-bb4a-6bf78f052752",
+      "comment": "Проверка поставщика",
+      "command": "assertSelectedLabel",
+      "target": "//select[@id='SupplierId']",
+      "targets": [],
+      "value": "Mayumi's"
+    }, {
+      "id": "fda1f9ad-c84c-4353-b893-866535423e63",
+      "comment": "Проверка поля \"Цена за единицу\"",
+      "command": "assertValue",
+      "target": "id=UnitPrice",
+      "targets": [],
+      "value": "300,0000"
+    }, {
+      "id": "9da09d10-5db4-46a1-89d3-5dff2e8313b4",
+      "comment": "Проверка поля \"Количество в единице\"",
+      "command": "assertValue",
+      "target": "id=QuantityPerUnit",
+      "targets": [],
+      "value": "25"
+    }, {
+      "id": "3151c108-097a-4d72-9b7a-18cc7d8ce481",
+      "comment": "Проверка поля \"Единиц на складе\"",
+      "command": "assertValue",
+      "target": "id=UnitsInStock",
+      "targets": [],
+      "value": "75"
+    }, {
+      "id": "79ff8569-42db-4cea-afa0-ec2a4b99931c",
+      "comment": "Проверка поля \"Единиц под заказ\"",
+      "command": "assertValue",
+      "target": "id=UnitsOnOrder",
+      "targets": [],
+      "value": "10"
+    }, {
+      "id": "e2b67e83-b97b-4354-b182-ca31171e68eb",
+      "comment": "Проверка поля \"Уровень нового заказа\"",
+      "command": "assertValue",
+      "target": "id=ReorderLevel",
+      "targets": [],
+      "value": "15"
+    }, {
+      "id": "824b06f2-a860-47ef-90a0-6374a7aa8147",
+      "comment": "Проверка галочки \"Снято с производства\"",
+      "command": "assertChecked",
+      "target": "id=Discontinued",
+      "targets": [],
+      "value": "checked"
+    }]
+  }, {
+    "id": "a035cbe1-5786-49c1-b138-8dfaf07b1613",
+    "name": "Delete product",
+    "commands": [{
+      "id": "83b6a04b-c30e-4eb4-b4a3-6cd26c24ef5d",
+      "comment": "Открытие страницы",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a27d83df-2a7d-4281-be64-d343493da21d",
+      "comment": "Открытие всех продуктов",
+      "command": "click",
+      "target": "xpath=(//a[contains(text(),'All Products')])[2]",
+      "targets": [
+        ["css=.container-fluid:nth-child(5) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa3fbaa2-e060-4b97-9b1d-c62229c3916b",
+      "comment": "Подтверждение последующего удаления",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5726c71b-0f61-46f0-a3b3-245970ea9ce5",
+      "comment": "Удаление созданного продукта ",
+      "command": "click",
+      "target": "//a[contains(text(),'Spinner')]/../..//a[contains(text(),'Remove')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3f9cd939-0827-4008-8a5f-181ea9dbf0f0",
+    "name": "Logout",
+    "commands": [{
+      "id": "a8f8f0ef-5a43-4112-81c5-a46be404c5ac",
+      "comment": "Открытие страницы",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fed4bf4c-3eb4-464d-895c-47da2ddd323b",
+      "comment": "Выход из учетной записи",
+      "command": "click",
+      "target": "//a[contains(text(),'Logout')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e742e502-c3a5-432b-8c98-c846af0dbc2d",
+      "comment": "Проверка открытия формы авторизации",
+      "command": "assertElementPresent",
+      "target": "//*[contains(text(),'Login')]",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d5819ecd-1052-4bee-a0bb-abbf37b468dd",
+    "name": "Antonov tests Northwind",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["be00b758-9749-4ec1-b048-9926d49f95c2", "f442ba20-452e-4ec7-a16f-ca7962c8cd99", "eaf968bf-91dd-4604-9f0f-7e8881606845", "a035cbe1-5786-49c1-b138-8dfaf07b1613", "3f9cd939-0827-4008-8a5f-181ea9dbf0f0"]
+  }],
+  "urls": ["http://localhost:5000/", "http://localhost:5000/Account/Login?ReturnUrl=%2F"],
+  "plugins": []
+}
